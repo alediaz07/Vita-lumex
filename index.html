@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#08080a">
+  <meta name="color-scheme" content="dark light">
+  <title>VITA LUMEX UNIQUE · Presentación interactiva</title>
+  <link rel="preload" href="assets/images/hero-material.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="intro-curtain" aria-hidden="true"><div class="curtain-mark">VITA</div><div class="curtain-line"></div></div>
+  <a class="skip-link" href="#opening">Ir a la presentación</a>
+
+  <header class="presenter-bar" aria-label="Controles de presentación">
+    <a class="brand-lockup" href="#opening" aria-label="Volver al inicio"><span class="brand-vita">VITA</span><span class="brand-product">LUMEX<sup>®</sup> UNIQUE</span></a>
+    <div class="chapter-readout" aria-live="polite"><span id="chapterNumber">01</span><span class="readout-divider"></span><span id="chapterTitle">Apertura</span></div>
+    <div class="presenter-actions">
+      <button class="icon-button" id="helpButton" type="button" aria-label="Ver controles" title="Controles de teclado">?</button>
+      <button class="icon-button fullscreen-button" id="fullscreenButton" type="button" aria-label="Entrar en pantalla completa" title="Pantalla completa"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg></button>
+      <button class="icon-button menu-button" id="menuButton" type="button" aria-label="Abrir índice" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="progress-track" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <nav class="chapter-nav" id="chapterNav" aria-label="Capítulos">
+    <ol>
+      <li><a href="#opening" data-nav="opening"><span>01</span><b>Apertura</b></a></li>
+      <li><a href="#system" data-nav="system"><span>02</span><b>El sistema</b></a></li>
+      <li><a href="#need" data-nav="need"><span>03</span><b>La necesidad</b></a></li>
+      <li><a href="#benefits" data-nav="benefits"><span>04</span><b>Beneficios</b></a></li>
+      <li><a href="#light" data-nav="light"><span>05</span><b>Luz</b></a></li>
+      <li><a href="#layers" data-nav="layers"><span>06</span><b>Por capas</b></a></li>
+      <li><a href="#workflow" data-nav="workflow"><span>07</span><b>Flujos</b></a></li>
+      <li><a href="#details" data-nav="details"><span>08</span><b>Detalles</b></a></li>
+      <li><a href="#result" data-nav="result"><span>09</span><b>Resultado</b></a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <section class="chapter hero" id="opening" data-chapter="Apertura" data-theme="dark" tabindex="-1">
+      <div class="hero-media" aria-hidden="true"><img src="assets/images/hero-material.webp" alt="" width="2400" height="1602" fetchpriority="high"><div class="hero-wash"></div></div>
+      <div class="hero-grid-lines" aria-hidden="true"></div>
+      <div class="hero-content safe-frame">
+        <div class="chapter-kicker reveal-item">VITA LUMEX<sup>®</sup> UNIQUE · Curso teórico-práctico</div>
+        <h1 class="hero-title" aria-label="De monolítico a único"><span class="title-line">De monolítico</span><span class="title-line title-accent">a único.</span></h1>
+        <div class="hero-foot reveal-item"><p>Color. Estructura. Textura. Glaseado.</p><p>Norman Díaz · 24 OCT 2026</p></div>
+      </div>
+      <a class="chapter-cue" href="#system"><span>Comenzar</span><i aria-hidden="true">↓</i></a>
+    </section>
+
+    <section class="chapter system-chapter" id="system" data-chapter="El sistema" data-theme="light" tabindex="-1">
+      <div class="section-intro safe-frame">
+        <p class="chapter-kicker">02 · Qué es</p>
+        <h2>Una cerámica<br><em>en estado líquido.</em></h2>
+        <p class="intro-copy">Un sistema de pastas cerámicas fluorescentes y no fluorescentes para colorear, estructurar, texturizar y glasear.</p>
+      </div>
+      <div class="system-scene scroll-scene" data-scroll-scene>
+        <div class="system-sticky">
+          <div class="system-image-wrap"><img src="assets/images/product-system.webp" alt="Pastas VITA LUMEX UNIQUE listas para su aplicación" width="1900" height="1357"></div>
+          <div class="system-orbit" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="system-definition"><span class="micro-label">EL SISTEMA</span><strong id="systemVerb">Colorear</strong><p id="systemText">Ajustar el croma dentro del grupo de tonos correspondiente.</p></div>
+          <div class="scene-counter"><span id="systemStep">01</span><i></i><span>04</span></div>
+        </div>
+        <div class="scroll-steps" data-scene="system">
+          <article class="scroll-step" data-index="0" data-title="Colorear" data-copy="Ajustar el croma dentro del grupo de tonos correspondiente."><span>01</span></article>
+          <article class="scroll-step" data-index="1" data-title="Estructurar" data-copy="Construir efectos tridimensionales con partículas cerámicas finamente molidas."><span>02</span></article>
+          <article class="scroll-step" data-index="2" data-title="Texturizar" data-copy="Modificar la superficie con microcapas ultrafinas de 0,1 a 0,2 mm."><span>03</span></article>
+          <article class="scroll-step" data-index="3" data-title="Glasear" data-copy="Completar el acabado con opciones fluorescentes y no fluorescentes."><span>04</span></article>
+        </div>
+      </div>
+      <div class="pause-frame safe-frame light-pause"><p>Capas ultrafinas 3D.</p><strong>Forma, estructura y puntos de contacto.</strong></div>
+    </section>
+
+    <section class="chapter need-chapter" id="need" data-chapter="La necesidad" data-theme="dark" tabindex="-1">
+      <div class="need-backdrop" aria-hidden="true"><img src="assets/images/tooth-opaque.webp" alt=""><img src="assets/images/tooth-natural.webp" alt=""></div>
+      <div class="need-content safe-frame">
+        <div class="need-heading"><p class="chapter-kicker">03 · La necesidad</p><h2>Más profundidad.<br><em>Menos espesor.</em></h2></div>
+        <div class="metric-cluster"><div class="metric-value">0,1<span>–</span>0,2</div><div class="metric-unit">mm</div><p>Aplicación ultrafina de TEXTURE PASTE para modificar forma y textura con precisión.</p></div>
+        <figure class="micro-detail reveal-item"><img src="assets/images/micro-layer.webp" alt="Detalle microscópico de una capa de 0,208 mm" width="495" height="481" loading="lazy"><figcaption>La microcapa se convierte en volumen, contacto y lectura superficial.</figcaption></figure>
+      </div>
+      <div class="need-marquee" aria-hidden="true">MICROCAPA · VITALIDAD · PROFUNDIDAD · TEXTURA ·</div>
+    </section>
+
+    <section class="chapter benefits-chapter" id="benefits" data-chapter="Beneficios" data-theme="light" tabindex="-1">
+      <div class="benefit-scene">
+        <div class="benefit-stage safe-frame">
+          <div class="benefit-copy">
+            <p class="chapter-kicker">04 · Cuatro ventajas reales</p><div class="benefit-number" id="benefitNumber">01</div><h2 id="benefitTitle">Flexibilidad</h2><p id="benefitText">Caracterización 3D, microcapas ultrafinas y técnicas de aplicación ajustables.</p>
+            <div class="benefit-controls" role="tablist" aria-label="Seleccionar beneficio">
+              <button class="dot-tab is-active" type="button" data-benefit="0" aria-label="Flexibilidad" aria-selected="true"></button><button class="dot-tab" type="button" data-benefit="1" aria-label="Estética" aria-selected="false"></button><button class="dot-tab" type="button" data-benefit="2" aria-label="Eficiencia" aria-selected="false"></button><button class="dot-tab" type="button" data-benefit="3" aria-label="Predecible" aria-selected="false"></button>
+            </div>
+          </div>
+          <div class="benefit-visual"><div class="image-index"><span id="benefitIndex">01</span> / 04</div><img id="benefitImage" src="assets/images/thin-layer.webp" alt="Aplicación de una microcapa ultrafina" width="1000" height="1171"><div class="image-caption" id="benefitCaption">TEXTURE PASTE · 0,1–0,2 mm</div></div>
+        </div>
+        <div class="benefit-scroll-steps" data-scene="benefits" aria-hidden="true"><div class="benefit-trigger" data-index="0"></div><div class="benefit-trigger" data-index="1"></div><div class="benefit-trigger" data-index="2"></div><div class="benefit-trigger" data-index="3"></div></div>
+      </div>
+    </section>
+
+    <section class="chapter light-chapter" id="light" data-chapter="Luz y fluorescencia" data-theme="dark" tabindex="-1">
+      <div class="light-atmosphere" aria-hidden="true"><span></span><span></span></div>
+      <div class="light-layout safe-frame">
+        <div class="light-copy"><p class="chapter-kicker">05 · POWER FLUO-GLAZE</p><h2>La estética cambia<br>con la luz.</h2><p>La combinación de 365 nm y 395 nm busca una lectura fiable y natural bajo distintas condiciones de iluminación.</p>
+          <div class="spectrum-control" role="group" aria-label="Condición de iluminación"><button type="button" data-light="365">365 <small>nm</small></button><button type="button" data-light="395">395 <small>nm</small></button><button class="is-active" type="button" data-light="combined">Combinado</button></div>
+          <div class="light-readout" aria-live="polite"><strong id="lightTitle">Visibilidad + naturalidad</strong><span id="lightText">De la máxima lectura del efecto a una percepción cercana a la luz visible.</span></div>
+          <button class="text-button" type="button" data-dialog="wavelengthDialog">Ver diagrama técnico <span>↗</span></button>
+        </div>
+        <div class="light-object" id="lightObject"><div class="light-halo"></div><img src="assets/images/product-system.webp" alt="VITA LUMEX UNIQUE POWER FLUO-GLAZE y pastas del sistema" width="1900" height="1357" loading="lazy"><div class="wave-label wave-a">365 nm</div><div class="wave-label wave-b">395 nm</div></div>
+      </div>
+      <div class="pause-frame dark-pause safe-frame"><p>Seguridad estética</p><strong>independiente de las condiciones de iluminación.</strong></div>
+    </section>
+
+    <section class="chapter layers-chapter" id="layers" data-chapter="Por capas" data-theme="dark" tabindex="-1">
+      <div class="layers-scene">
+        <div class="layers-stage">
+          <div class="layers-heading safe-frame"><p class="chapter-kicker">06 · Cómo funciona</p><h2>Una restauración.<br><em>Cinco decisiones.</em></h2></div>
+          <div class="tooth-viewer">
+            <div class="sequence-window" aria-live="polite"><img id="sequenceImage" src="assets/images/layers-sequence.webp" alt="Evolución visual de una restauración a través de sus capas" width="1259" height="194" loading="lazy"></div>
+            <div class="sequence-meta"><span id="layerNumber">01 / 05</span><h3 id="layerTitle">Construir el croma</h3><p id="layerText">CHROMA PASTE ajusta el croma dentro de los grupos de tonos correspondientes.</p></div>
+            <div class="sequence-controls"><button id="previousLayer" type="button" aria-label="Etapa anterior">←</button><div class="sequence-progress"><span id="layerProgress"></span></div><button id="nextLayer" type="button" aria-label="Etapa siguiente">→</button></div>
+          </div>
+          <div class="material-pots" aria-label="Familias de materiales"><figure><img src="assets/images/pot-chroma.webp" alt="CHROMA PASTE red-brown A" loading="lazy"><figcaption>CHROMA</figcaption></figure><figure><img src="assets/images/pot-translucent.webp" alt="TRANSLUCENT EFFECT foggy-grey" loading="lazy"><figcaption>EFFECT</figcaption></figure><figure><img src="assets/images/pot-lumin.webp" alt="LUMIN crystal-white" loading="lazy"><figcaption>GLAZE</figcaption></figure></div>
+        </div>
+        <div class="layer-steps" data-scene="layers">
+          <article class="layer-trigger" data-index="0"><span>01</span><h3>Croma</h3><p>La base cromática.</p></article><article class="layer-trigger" data-index="1"><span>02</span><h3>Mamelón</h3><p>Arquitectura interna.</p></article><article class="layer-trigger" data-index="2"><span>03</span><h3>Translucidez</h3><p>Profundidad incisal.</p></article><article class="layer-trigger" data-index="3"><span>04</span><h3>Textura</h3><p>Lectura superficial.</p></article><article class="layer-trigger" data-index="4"><span>05</span><h3>Glaseado</h3><p>Acabado y fluorescencia.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter workflow-chapter" id="workflow" data-chapter="Flujos de trabajo" data-theme="light" tabindex="-1">
+      <div class="workflow-header safe-frame"><p class="chapter-kicker">07 · BASIC / CREATIVE</p><h2>Un sistema.<br><em>Dos niveles de libertad.</em></h2><p>Flujos fáciles de aprender, con espacio para un resultado predecible o una caracterización más libre.</p></div>
+      <div class="workflow-console safe-frame">
+        <div class="workflow-tabs" role="tablist" aria-label="Seleccionar flujo de trabajo"><button class="is-active" type="button" role="tab" data-workflow="basic" aria-selected="true"><span>01</span>BASIC</button><button type="button" role="tab" data-workflow="posterior" aria-selected="false"><span>02</span>CREATIVE · Posterior</button><button type="button" role="tab" data-workflow="anterior" aria-selected="false"><span>03</span>CREATIVE · Anterior</button></div>
+        <div class="workflow-panel"><div class="workflow-image-wrap"><img id="workflowImage" src="assets/images/workflow-basic-posterior.webp" alt="Flujo BASIC para restauración posterior" width="1213" height="523" loading="lazy"></div><div class="workflow-description"><span id="workflowLabel">BASIC</span><h3 id="workflowTitle">Una ruta clara hacia el resultado.</h3><p id="workflowText">Situación inicial, distribución de materiales y resultado final en una secuencia fácil de leer.</p><button class="mini-action" id="workflowToggle" type="button">Ver anterior <span>↔</span></button></div></div>
+      </div>
+      <div class="workflow-band" aria-hidden="true"><img src="assets/images/material-spectrum.webp" alt=""></div>
+    </section>
+
+    <section class="chapter details-chapter" id="details" data-chapter="Detalles técnicos" data-theme="dark" tabindex="-1">
+      <div class="details-heading safe-frame"><p class="chapter-kicker">08 · Datos y compatibilidad</p><h2>Precisión que<br><em>se puede medir.</em></h2></div>
+      <div class="spec-strip safe-frame"><article><span>≈</span><strong>100</strong><small>MPa · Resistencia a la flexión en 3 puntos</small></article><article><span>≈</span><strong>10</strong><small>µg/cm² · Solubilidad en ácidos</small></article><article><span>≈</span><strong>8,7</strong><small>10<sup>−6</sup> K<sup>−1</sup> · CET (25–400 °C)</small></article></div>
+      <div class="compatibility-layout safe-frame"><div class="compatibility-visual"><img src="assets/images/compatibility.webp" alt="Materiales de armazón compatibles con VITA LUMEX UNIQUE" width="907" height="575" loading="lazy"></div><div class="compatibility-copy"><span class="micro-label">INDICACIONES</span><h3>Cuatro familias de soporte.</h3><ul><li><span>01</span>Dióxido de zirconio</li><li><span>02</span>Disilicato de litio</li><li><span>03</span>Titanio · Grado 1–5</li><li><span>04</span>Cerámica de feldespato</li></ul><div class="detail-actions"><button class="text-button" type="button" data-dialog="compositionDialog">Composición química <span>↗</span></button><button class="text-button" type="button" data-dialog="kitDialog">Ver kits del sistema <span>↗</span></button></div></div></div>
+    </section>
+
+    <section class="chapter result-chapter" id="result" data-chapter="Resultado" data-theme="dark" tabindex="-1">
+      <div class="result-intro safe-frame"><p class="chapter-kicker">09 · Aplicación y resultado</p><h2>Antes. Técnica.<br><em>Resultado.</em></h2><p>Desliza para comparar la situación inicial con la lectura final de la restauración.</p></div>
+      <div class="comparison-wrap safe-frame"><div class="comparison" id="comparison"><img class="comparison-before" src="assets/images/tooth-opaque.webp" alt="Restauración antes de la caracterización" width="1033" height="991" loading="lazy"><div class="comparison-after" id="comparisonAfter"><img src="assets/images/tooth-natural.webp" alt="Resultado final caracterizado" width="895" height="946" loading="lazy"></div><div class="comparison-line" id="comparisonLine"><span>↔</span></div><span class="comparison-label before-label">ANTES</span><span class="comparison-label after-label">RESULTADO</span></div><input class="comparison-range" id="comparisonRange" type="range" min="0" max="100" value="52" aria-label="Comparar antes y resultado"></div>
+      <div class="fired-toggle safe-frame"><div><p class="chapter-kicker">Control y precisión</p><h3>El color ya es visible durante la estratificación.</h3><p>Un resultado de cocción controlable para un trabajo predecible.</p></div><button class="state-card" id="stateCard" type="button" aria-label="Alternar entre estado húmedo y después de la cocción"><img id="stateImage" src="assets/images/wet-state.webp" alt="Restauración en estado húmedo" width="359" height="359" loading="lazy"><span id="stateLabel">En estado húmedo</span><i>Alternar ↗</i></button></div>
+      <footer class="closing-scene"><img src="assets/images/application-bridge.webp" alt="Aplicación precisa de VITA LUMEX UNIQUE sobre una restauración" width="2200" height="1468" loading="lazy"><div class="closing-shade"></div><div class="closing-content safe-frame"><span class="chapter-kicker">VITA LUMEX<sup>®</sup> UNIQUE</span><h2>perfect match.</h2><p>Norman Díaz · Curso teórico-práctico · 24 OCT 2026</p><button class="restart-button" id="restartButton" type="button">Volver al inicio <span>↑</span></button></div></footer>
+    </section>
+  </main>
+
+  <dialog class="modal" id="helpDialog"><button class="modal-close" type="button" data-close aria-label="Cerrar">×</button><span class="chapter-kicker">Control del presentador</span><h2>Navegación rápida</h2><div class="key-grid"><kbd>↓</kbd><span>Avanzar capítulo</span><kbd>↑</kbd><span>Retroceder capítulo</span><kbd>→</kbd><span>Avanzar capítulo</span><kbd>←</kbd><span>Retroceder capítulo</span><kbd>Home</kbd><span>Ir al inicio</span><kbd>End</kbd><span>Ir al resultado</span><kbd>F</kbd><span>Pantalla completa</span><kbd>Esc</kbd><span>Cerrar panel</span></div><p class="modal-note">Los controles no interfieren cuando el foco está en un botón, enlace o deslizador.</p></dialog>
+  <dialog class="modal visual-modal" id="wavelengthDialog"><button class="modal-close" type="button" data-close aria-label="Cerrar">×</button><span class="chapter-kicker">365 nm + 395 nm</span><h2>Dos lecturas de la fluorescencia.</h2><img src="assets/images/wavelengths.webp" alt="Diagrama de influencia de 365 y 395 nanómetros en la percepción de la fluorescencia" width="1003" height="691" loading="lazy"><div class="modal-columns"><p><strong>365 nm</strong>Fuerte excitación: permite leer intensidad y efectos.</p><p><strong>395 nm</strong>Más cerca de la luz visible: ofrece una percepción más realista.</p></div></dialog>
+  <dialog class="modal" id="compositionDialog"><button class="modal-close" type="button" data-close aria-label="Cerrar">×</button><span class="chapter-kicker">Datos y propiedades</span><h2>Composición química.</h2><div class="composition-list"><div><span>SiO₂</span><strong>58–66 %</strong></div><div><span>Al₂O₃</span><strong>7–11 %</strong></div><div><span>K₂O</span><strong>6–9 %</strong></div><div><span>B₂O₃</span><strong>5–9 %</strong></div><div><span>Na₂O</span><strong>5–9 %</strong></div><div><span>CaO</span><strong>1–5 %</strong></div><div><span>ZrO₂</span><strong>&lt; 5 %</strong></div><div><span>Otros componentes</span><strong>&lt; 10 %</strong></div></div></dialog>
+  <dialog class="modal visual-modal" id="kitDialog"><button class="modal-close" type="button" data-close aria-label="Cerrar">×</button><span class="chapter-kicker">Sistema y componentes</span><h2>Dos configuraciones.</h2><div class="kit-grid"><figure><img src="assets/images/kit-classic.webp" alt="Kit estándar VITA classical A1-D4" width="979" height="708" loading="lazy"><figcaption>VITA classical A1–D4<sup>®</sup></figcaption></figure><figure><img src="assets/images/kit-3d.webp" alt="Kit estándar VITA 3D-MASTER" width="988" height="687" loading="lazy"><figcaption>VITA 3D-MASTER<sup>®</sup></figcaption></figure></div></dialog>
+</body>
+</html>
