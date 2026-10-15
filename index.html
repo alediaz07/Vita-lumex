@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#130b12">
+<meta name="theme-color" content="#08080a">
 <title>VITA LUMEX UNIQUE · GINGIVA | Presentación interactiva</title>
 <meta name="description" content="Presentación de estética rosa y caracterización gingival con VITA LUMEX UNIQUE. Flujos BASIC GINGIVA y CREATIVE GINGIVA.">
 <style>
@@ -34,6 +34,43 @@ h1,h2,h3,p{margin-top:0}h1,h2{font-family:Manrope,Arial,sans-serif;letter-spacin
 .reveal{opacity:0;transform:translateY(36px);transition:opacity .75s,transform .75s}.reveal.visible{opacity:1;transform:none}
 @media(max-width:850px){.chapter{padding:110px 25px 80px}.nav{display:none}.grid,.split{grid-template-columns:1fr}.grid{gap:12px}.tile{min-height:120px;padding:20px}.steps{grid-template-columns:repeat(2,1fr)}.hero-art{right:-36%;top:22%;width:90vw;height:90vw;opacity:.42}.pink-stage{height:240px}.header{padding:0 20px}.counter{font-size:.65rem}h1{font-size:clamp(3.7rem,13vw,6rem)}h2{font-size:clamp(2.9rem,10vw,5rem)}.compare{height:285px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+/* Identidad VITA original: magenta #e50062, negro, blanco y neutros.
+   Las muestras gingivales conservan sus tonos demostrativos. */
+:root{--ink:#101014;--paper:#f4f1f2;--pink:#e50062;--rose:#ff2b7b;--berry:#e50062;--muted:#8e888c;--edge:rgba(255,255,255,.16)}
+html{background:#08080a}
+body{background:#08080a;color:#f4f1f2}
+body:before{background:radial-gradient(circle at 84% 42%,rgba(229,0,98,.075),transparent 41%)}
+.header{background:rgba(8,8,10,.83);border-bottom-color:rgba(255,255,255,.13)}
+.wordmark small,.counter,.kicker,.byline,.scrollcue{color:#ff6ba5}
+.icon-btn{border-color:rgba(255,255,255,.34)}
+button:focus-visible,a:focus-visible,input:focus-visible{outline-color:#ff2b7b}
+.progress>i{background:#e50062}
+.nav a.active{background:#e50062;box-shadow:0 0 0 5px rgba(229,0,98,.2)}
+.chapter:nth-of-type(2n){background:#f4f1f2;color:#101014}
+.chapter:nth-of-type(2n) .kicker{color:#c80055}
+.chapter:nth-of-type(2n) .lede{color:#54545a}
+.chapter:nth-of-type(2n+1) em{color:#ff2b7b}
+.chapter:nth-of-type(2n) em{color:#c80055}
+.lede{color:#cfccd0}
+.hero{background:radial-gradient(ellipse at 82% 45%,#391126 0,#171018 38%,#08080a 74%)}
+.hero-art{box-shadow:0 0 145px rgba(229,0,98,.17);opacity:.65}
+.tile .num{color:#ff6ba5}
+.chapter:nth-of-type(2n) .tile{background:#fff;border-color:rgba(16,16,20,.12)}
+.chapter:nth-of-type(2n) .tile .num{color:#c80055}
+.glass{background:linear-gradient(160deg,rgba(229,0,98,.09),rgba(255,255,255,.04))}
+.light{background:#f4f1f2;color:#101014}
+.light .glass{background:#fff;border-color:rgba(16,16,20,.13)}
+.light .lede{color:#54545a}
+.swatch.active{outline-color:#e50062}
+.step{background:rgba(255,255,255,.045)}
+.step b{color:#ff67a7}
+.step.active{background:rgba(229,0,98,.19);border-color:#ff2b7b}
+.step-summary{border-left-color:#e50062}
+.tab{border-color:rgba(16,16,20,.4)}
+.tab.active{background:#e50062;border-color:#e50062;color:#fff}
+.tag{border-color:rgba(255,255,255,.35)}
+
 </style>
 </head>
 <body>
