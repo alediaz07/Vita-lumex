@@ -1,160 +1,74 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#08080a">
-  <meta name="color-scheme" content="dark light">
-  <title>VITA LUMEX UNIQUE · Presentación interactiva</title>
-  <link rel="preload" href="assets/images/hero-material.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#130b12">
+<title>VITA LUMEX UNIQUE · GINGIVA | Presentación interactiva</title>
+<meta name="description" content="Presentación de estética rosa y caracterización gingival con VITA LUMEX UNIQUE. Flujos BASIC GINGIVA y CREATIVE GINGIVA.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{--ink:#120b12;--paper:#f8f3f0;--pink:#d9a2b4;--rose:#e7b7bd;--berry:#933e5c;--muted:#baaeb7;--edge:rgba(255,255,255,.17);scroll-behavior:smooth}
+*{box-sizing:border-box}html{scroll-snap-type:y proximity}body{margin:0;background:var(--ink);color:var(--paper);font:16px/1.6 'DM Sans',Arial,sans-serif;overflow-x:hidden}button,a{font:inherit}a{color:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #ffaacf;outline-offset:4px}
+body:before{content:'';position:fixed;inset:0;background:radial-gradient(circle at 82% 45%,rgba(151,70,103,.11),transparent 40%);z-index:-1;pointer-events:none}
+.header{height:75px;position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,4.5vw,80px);background:rgba(18,11,18,.7);backdrop-filter:blur(22px);border-bottom:1px solid var(--edge)}
+.wordmark{font:800 1rem Manrope,sans-serif;letter-spacing:.16em;text-decoration:none}.wordmark small{display:block;font:500 .56rem Manrope,sans-serif;letter-spacing:.23em;color:var(--rose)}
+.controls{display:flex;gap:12px;align-items:center}.counter{color:#e3c4cd;font-size:.76rem;letter-spacing:.12em}.icon-btn{background:transparent;color:var(--paper);border:1px solid var(--edge);border-radius:50%;width:38px;height:38px}
+.progress{position:fixed;top:75px;left:0;right:0;height:2px;background:#ffffff17;z-index:60}.progress>i{display:block;height:100%;width:0;background:var(--rose);transition:width .2s}
+.nav{position:fixed;z-index:30;left:clamp(15px,2.3vw,42px);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:12px}.nav a{width:8px;height:8px;border-radius:50%;background:#fff6;border:0;transition:.2s}.nav a.active{background:var(--rose);transform:scale(1.5);box-shadow:0 0 0 5px #e7b7bd22}
+.chapter{min-height:100svh;position:relative;padding:clamp(125px,15vh,190px) clamp(28px,10vw,190px) 8vh;display:flex;flex-direction:column;justify-content:center;scroll-snap-align:start;isolation:isolate;overflow:hidden}
+.chapter:nth-of-type(2n){background:#eee6e2;color:#2e1c27}.chapter:nth-of-type(2n) .kicker{color:#81405d}.chapter:nth-of-type(2n) .lede{color:#685761}
+.kicker{color:var(--rose);letter-spacing:.24em;text-transform:uppercase;font-size:.71rem;font-weight:800;margin:0 0 25px}
+h1,h2,h3,p{margin-top:0}h1,h2{font-family:Manrope,Arial,sans-serif;letter-spacing:-.065em;line-height:1.08}h1{font-size:clamp(4rem,9vw,10rem);max-width:1100px;margin-bottom:28px}h2{font-size:clamp(2.9rem,6.2vw,7rem);max-width:1080px;margin-bottom:25px}h3{font-family:Manrope,sans-serif;letter-spacing:-.035em;font-size:clamp(1.2rem,1.9vw,2rem)}em{font-style:normal;color:var(--berry)}.chapter:nth-of-type(2n+1) em{color:#f3b3ca}
+.lede{font-size:clamp(1.08rem,1.7vw,1.45rem);max-width:640px;color:#d4c6cf;line-height:1.65}
+.hero{background:radial-gradient(ellipse at 82% 45%,#5a233b 0,#28131f 36%,#100b12 70%)}.hero h1{position:relative;z-index:2}.hero .lede{z-index:2;position:relative}.hero-art{position:absolute;width:min(60vw,780px);height:min(60vw,780px);right:-9%;top:18%;opacity:.77;border-radius:50%;background:radial-gradient(ellipse at 38% 27%,#ffdce0 0 6%,#f0b0ba 16%,#a54e75 43%,#401729 70%,transparent 71%);box-shadow:0 0 160px #8f406b3f;filter:blur(1px);transform:rotate(-26deg)}.hero-art:after{content:'';position:absolute;inset:22% 13% 42% 16%;background:linear-gradient(140deg,#fffdf9,#d9d4d5);border-radius:50% 50% 45% 45%;box-shadow:30px 25px 45px #4d203850}
+.byline{letter-spacing:.1em;text-transform:uppercase;font-size:.75rem;color:#ebbdce;margin-top:3rem;position:relative;z-index:2}.scrollcue{position:absolute;bottom:40px;color:#dfb3c1;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:35px}.tile{border:1px solid currentColor;border-color:#ffffff27;border-radius:18px;padding:28px;background:#ffffff0b;min-height:195px}.chapter:nth-of-type(2n) .tile{background:#fff9;border-color:#42243821}.tile .num{color:#e9abc1;font:700 .75rem Manrope;letter-spacing:.15em}.chapter:nth-of-type(2n) .tile .num{color:#8d4266}.tile h3{margin:15px 0 10px}.tile p{color:inherit;opacity:.78;font-size:.95rem}
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:6vw;align-items:center}.glass{background:linear-gradient(160deg,#8f405d38,#ffffff10);border:1px solid var(--edge);border-radius:32px;padding:clamp(26px,4vw,56px);box-shadow:0 32px 120px #0002}.light .glass{background:white;border-color:#e2d2d8}.light{background:#eee6e2;color:#2e1c27}.light .lede{color:#665862}
+.pink-stage{height:390px;border-radius:42% 50% 42% 43%;background:radial-gradient(circle at 44% 31%,#fed9dc,#dd8da5 37%,#78344f 67%,#391624 90%);box-shadow:inset -18px -35px 75px #411b35aa,0 40px 70px #34162550;position:relative;transform:rotate(-8deg)}.pink-stage:before{content:'';position:absolute;left:23%;top:15%;width:54%;height:45%;background:linear-gradient(115deg,#fff,#d6ced0);border-radius:47% 47% 35% 35%;box-shadow:inset -15px -12px 25px #aaa2a5}
+.swatches{display:flex;flex-wrap:wrap;gap:14px;margin:28px 0}.swatch{width:56px;height:56px;border-radius:50%;border:3px solid transparent;box-shadow:0 9px 25px #0002}.swatch.active{outline:2px solid #492039;outline-offset:5px}.swatch[data-color="deep"]{background:#933e5c}.swatch[data-color="rose"]{background:#d68ca5}.swatch[data-color="pale"]{background:#eab9bd}.swatch[data-color="red"]{background:#872a40}
+.shade-preview{border-radius:20px;min-height:160px;display:flex;flex-direction:column;justify-content:center;padding:26px;background:linear-gradient(130deg,var(--selected,#933e5c),#fff5);color:#fff;transition:background .25s}.shade-preview strong{font:700 1.7rem Manrope}.shade-preview p{margin:7px 0 0}
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:25px}.step{background:#fff1;color:#fff;border:1px solid #ffffff27;text-align:left;border-radius:16px;padding:21px;min-height:150px}.step b{display:block;color:#e1aac0;font-size:.75rem;margin-bottom:14px}.step strong{font:700 1.05rem Manrope}.step.active{background:#ab627e55;border-color:#e9b8c9}.step-summary{margin-top:22px;border-left:3px solid #d697b0;padding:8px 0 8px 22px;max-width:700px;min-height:110px}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}.tab{border:1px solid #af8a9b;background:transparent;color:inherit;padding:10px 22px;border-radius:100px}.tab.active{background:#853653;color:white;border-color:#853653}
+.compare{position:relative;max-width:750px;height:380px;overflow:hidden;border-radius:24px;background:radial-gradient(circle at 44% 35%,#bb7892 0 15%,#7a354f 42%,#3e1c2e 85%);border:1px solid #ffffff33}.compare-after{position:absolute;inset:0;clip-path:inset(0 48% 0 0);background:radial-gradient(circle at 44% 35%,#facbd0,#d17c9c 40%,#793049 84%)}.compare-before,.compare-after{display:flex;align-items:end;padding:25px;color:white;font:700 .82rem Manrope;letter-spacing:.18em;text-shadow:0 1px 3px #000}.compare input{position:absolute;inset:auto 5% 18px;width:90%;z-index:3;accent-color:#fff}.tag{display:inline-block;border:1px solid currentColor;border-color:#ffffff44;padding:8px 16px;border-radius:100px;font-size:.76rem;letter-spacing:.11em;margin:10px 0 20px}
+.source-link{color:inherit;text-underline-offset:4px}.footnote{font-size:.8rem;opacity:.67;max-width:850px;margin-top:25px}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .75s,transform .75s}.reveal.visible{opacity:1;transform:none}
+@media(max-width:850px){.chapter{padding:110px 25px 80px}.nav{display:none}.grid,.split{grid-template-columns:1fr}.grid{gap:12px}.tile{min-height:120px;padding:20px}.steps{grid-template-columns:repeat(2,1fr)}.hero-art{right:-36%;top:22%;width:90vw;height:90vw;opacity:.42}.pink-stage{height:240px}.header{padding:0 20px}.counter{font-size:.65rem}h1{font-size:clamp(3.7rem,13vw,6rem)}h2{font-size:clamp(2.9rem,10vw,5rem)}.compare{height:285px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
 </head>
 <body>
-  <div class="intro-curtain" aria-hidden="true"><div class="curtain-mark">VITA</div><div class="curtain-line"></div></div>
-  <a class="skip-link" href="#opening">Ir a la presentación</a>
-
-  <header class="presenter-bar" aria-label="Controles de presentación">
-    <a class="brand-lockup" href="#opening" aria-label="Volver al inicio"><span class="brand-vita">VITA</span><span class="brand-product">LUMEX<sup>®</sup> UNIQUE</span></a>
-    <div class="chapter-readout" aria-live="polite"><span id="chapterNumber">01</span><span class="readout-divider"></span><span id="chapterTitle">Apertura</span></div>
-    <div class="presenter-actions">
-      <button class="icon-button" id="helpButton" type="button" aria-label="Ver controles" title="Controles de teclado">?</button>
-      <button class="icon-button fullscreen-button" id="fullscreenButton" type="button" aria-label="Entrar en pantalla completa" title="Pantalla completa"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg></button>
-      <button class="icon-button menu-button" id="menuButton" type="button" aria-label="Abrir índice" aria-expanded="false"><span></span><span></span></button>
-    </div>
-  </header>
-  <div class="progress-track" aria-hidden="true"><span id="progressBar"></span></div>
-
-  <nav class="chapter-nav" id="chapterNav" aria-label="Capítulos">
-    <ol>
-      <li><a href="#opening" data-nav="opening"><span>01</span><b>Apertura</b></a></li>
-      <li><a href="#system" data-nav="system"><span>02</span><b>El sistema</b></a></li>
-      <li><a href="#need" data-nav="need"><span>03</span><b>La necesidad</b></a></li>
-      <li><a href="#benefits" data-nav="benefits"><span>04</span><b>Beneficios</b></a></li>
-      <li><a href="#light" data-nav="light"><span>05</span><b>Luz</b></a></li>
-      <li><a href="#layers" data-nav="layers"><span>06</span><b>Por capas</b></a></li>
-      <li><a href="#workflow" data-nav="workflow"><span>07</span><b>Flujos</b></a></li>
-      <li><a href="#details" data-nav="details"><span>08</span><b>Detalles</b></a></li>
-      <li><a href="#result" data-nav="result"><span>09</span><b>Resultado</b></a></li>
-    </ol>
-  </nav>
-
-  <main>
-    <section class="chapter hero" id="opening" data-chapter="Apertura" data-theme="dark" tabindex="-1">
-      <div class="hero-media" aria-hidden="true"><img src="assets/images/hero-material.webp" alt="" width="2400" height="1602" fetchpriority="high"><div class="hero-wash"></div></div>
-      <div class="hero-grid-lines" aria-hidden="true"></div>
-      <div class="hero-content safe-frame">
-        <div class="chapter-kicker reveal-item">VITA LUMEX<sup>®</sup> UNIQUE · Curso teórico-práctico</div>
-        <h1 class="hero-title" aria-label="De monolítico a único"><span class="title-line">De monolítico</span><span class="title-line title-accent">a único.</span></h1>
-        <div class="hero-foot reveal-item"><p>Color. Estructura. Textura. Glaseado.</p><p>Norman Díaz · 24 OCT 2026</p></div>
-      </div>
-      <a class="chapter-cue" href="#system"><span>Comenzar</span><i aria-hidden="true">↓</i></a>
-    </section>
-
-    <section class="chapter system-chapter" id="system" data-chapter="El sistema" data-theme="light" tabindex="-1">
-      <div class="section-intro safe-frame">
-        <p class="chapter-kicker">02 · Qué es</p>
-        <h2>Una cerámica<br><em>en estado líquido.</em></h2>
-        <p class="intro-copy">Un sistema de pastas cerámicas fluorescentes y no fluorescentes para colorear, estructurar, texturizar y glasear.</p>
-      </div>
-      <div class="system-scene scroll-scene" data-scroll-scene>
-        <div class="system-sticky">
-          <div class="system-image-wrap"><img src="assets/images/product-system.webp" alt="Pastas VITA LUMEX UNIQUE listas para su aplicación" width="1900" height="1357"></div>
-          <div class="system-orbit" aria-hidden="true"><span></span><span></span><span></span></div>
-          <div class="system-definition"><span class="micro-label">EL SISTEMA</span><strong id="systemVerb">Colorear</strong><p id="systemText">Ajustar el croma dentro del grupo de tonos correspondiente.</p></div>
-          <div class="scene-counter"><span id="systemStep">01</span><i></i><span>04</span></div>
-        </div>
-        <div class="scroll-steps" data-scene="system">
-          <article class="scroll-step" data-index="0" data-title="Colorear" data-copy="Ajustar el croma dentro del grupo de tonos correspondiente."><span>01</span></article>
-          <article class="scroll-step" data-index="1" data-title="Estructurar" data-copy="Construir efectos tridimensionales con partículas cerámicas finamente molidas."><span>02</span></article>
-          <article class="scroll-step" data-index="2" data-title="Texturizar" data-copy="Modificar la superficie con microcapas ultrafinas de 0,1 a 0,2 mm."><span>03</span></article>
-          <article class="scroll-step" data-index="3" data-title="Glasear" data-copy="Completar el acabado con opciones fluorescentes y no fluorescentes."><span>04</span></article>
-        </div>
-      </div>
-      <div class="pause-frame safe-frame light-pause"><p>Capas ultrafinas 3D.</p><strong>Forma, estructura y puntos de contacto.</strong></div>
-    </section>
-
-    <section class="chapter need-chapter" id="need" data-chapter="La necesidad" data-theme="dark" tabindex="-1">
-      <div class="need-backdrop" aria-hidden="true"><img src="assets/images/tooth-opaque.webp" alt=""><img src="assets/images/tooth-natural.webp" alt=""></div>
-      <div class="need-content safe-frame">
-        <div class="need-heading"><p class="chapter-kicker">03 · La necesidad</p><h2>Más profundidad.<br><em>Menos espesor.</em></h2></div>
-        <div class="metric-cluster"><div class="metric-value">0,1<span>–</span>0,2</div><div class="metric-unit">mm</div><p>Aplicación ultrafina de TEXTURE PASTE para modificar forma y textura con precisión.</p></div>
-        <figure class="micro-detail reveal-item"><img src="assets/images/micro-layer.webp" alt="Detalle microscópico de una capa de 0,208 mm" width="495" height="481" loading="lazy"><figcaption>La microcapa se convierte en volumen, contacto y lectura superficial.</figcaption></figure>
-      </div>
-      <div class="need-marquee" aria-hidden="true">MICROCAPA · VITALIDAD · PROFUNDIDAD · TEXTURA ·</div>
-    </section>
-
-    <section class="chapter benefits-chapter" id="benefits" data-chapter="Beneficios" data-theme="light" tabindex="-1">
-      <div class="benefit-scene">
-        <div class="benefit-stage safe-frame">
-          <div class="benefit-copy">
-            <p class="chapter-kicker">04 · Cuatro ventajas reales</p><div class="benefit-number" id="benefitNumber">01</div><h2 id="benefitTitle">Flexibilidad</h2><p id="benefitText">Caracterización 3D, microcapas ultrafinas y técnicas de aplicación ajustables.</p>
-            <div class="benefit-controls" role="tablist" aria-label="Seleccionar beneficio">
-              <button class="dot-tab is-active" type="button" data-benefit="0" aria-label="Flexibilidad" aria-selected="true"></button><button class="dot-tab" type="button" data-benefit="1" aria-label="Estética" aria-selected="false"></button><button class="dot-tab" type="button" data-benefit="2" aria-label="Eficiencia" aria-selected="false"></button><button class="dot-tab" type="button" data-benefit="3" aria-label="Predecible" aria-selected="false"></button>
-            </div>
-          </div>
-          <div class="benefit-visual"><div class="image-index"><span id="benefitIndex">01</span> / 04</div><img id="benefitImage" src="assets/images/thin-layer.webp" alt="Aplicación de una microcapa ultrafina" width="1000" height="1171"><div class="image-caption" id="benefitCaption">TEXTURE PASTE · 0,1–0,2 mm</div></div>
-        </div>
-        <div class="benefit-scroll-steps" data-scene="benefits" aria-hidden="true"><div class="benefit-trigger" data-index="0"></div><div class="benefit-trigger" data-index="1"></div><div class="benefit-trigger" data-index="2"></div><div class="benefit-trigger" data-index="3"></div></div>
-      </div>
-    </section>
-
-    <section class="chapter light-chapter" id="light" data-chapter="Luz y fluorescencia" data-theme="dark" tabindex="-1">
-      <div class="light-atmosphere" aria-hidden="true"><span></span><span></span></div>
-      <div class="light-layout safe-frame">
-        <div class="light-copy"><p class="chapter-kicker">05 · POWER FLUO-GLAZE</p><h2>La estética cambia<br>con la luz.</h2><p>La combinación de 365 nm y 395 nm busca una lectura fiable y natural bajo distintas condiciones de iluminación.</p>
-          <div class="spectrum-control" role="group" aria-label="Condición de iluminación"><button type="button" data-light="365">365 <small>nm</small></button><button type="button" data-light="395">395 <small>nm</small></button><button class="is-active" type="button" data-light="combined">Combinado</button></div>
-          <div class="light-readout" aria-live="polite"><strong id="lightTitle">Visibilidad + naturalidad</strong><span id="lightText">De la máxima lectura del efecto a una percepción cercana a la luz visible.</span></div>
-          <button class="text-button" type="button" data-dialog="wavelengthDialog">Ver diagrama técnico <span>↗</span></button>
-        </div>
-        <div class="light-object" id="lightObject"><div class="light-halo"></div><img src="assets/images/product-system.webp" alt="VITA LUMEX UNIQUE POWER FLUO-GLAZE y pastas del sistema" width="1900" height="1357" loading="lazy"><div class="wave-label wave-a">365 nm</div><div class="wave-label wave-b">395 nm</div></div>
-      </div>
-      <div class="pause-frame dark-pause safe-frame"><p>Seguridad estética</p><strong>independiente de las condiciones de iluminación.</strong></div>
-    </section>
-
-    <section class="chapter layers-chapter" id="layers" data-chapter="Por capas" data-theme="dark" tabindex="-1">
-      <div class="layers-scene">
-        <div class="layers-stage">
-          <div class="layers-heading safe-frame"><p class="chapter-kicker">06 · Cómo funciona</p><h2>Una restauración.<br><em>Cinco decisiones.</em></h2></div>
-          <div class="tooth-viewer">
-            <div class="sequence-window" aria-live="polite"><img id="sequenceImage" src="assets/images/layers-sequence.webp" alt="Evolución visual de una restauración a través de sus capas" width="1259" height="194" loading="lazy"></div>
-            <div class="sequence-meta"><span id="layerNumber">01 / 05</span><h3 id="layerTitle">Construir el croma</h3><p id="layerText">CHROMA PASTE ajusta el croma dentro de los grupos de tonos correspondientes.</p></div>
-            <div class="sequence-controls"><button id="previousLayer" type="button" aria-label="Etapa anterior">←</button><div class="sequence-progress"><span id="layerProgress"></span></div><button id="nextLayer" type="button" aria-label="Etapa siguiente">→</button></div>
-          </div>
-          <div class="material-pots" aria-label="Familias de materiales"><figure><img src="assets/images/pot-chroma.webp" alt="CHROMA PASTE red-brown A" loading="lazy"><figcaption>CHROMA</figcaption></figure><figure><img src="assets/images/pot-translucent.webp" alt="TRANSLUCENT EFFECT foggy-grey" loading="lazy"><figcaption>EFFECT</figcaption></figure><figure><img src="assets/images/pot-lumin.webp" alt="LUMIN crystal-white" loading="lazy"><figcaption>GLAZE</figcaption></figure></div>
-        </div>
-        <div class="layer-steps" data-scene="layers">
-          <article class="layer-trigger" data-index="0"><span>01</span><h3>Croma</h3><p>La base cromática.</p></article><article class="layer-trigger" data-index="1"><span>02</span><h3>Mamelón</h3><p>Arquitectura interna.</p></article><article class="layer-trigger" data-index="2"><span>03</span><h3>Translucidez</h3><p>Profundidad incisal.</p></article><article class="layer-trigger" data-index="3"><span>04</span><h3>Textura</h3><p>Lectura superficial.</p></article><article class="layer-trigger" data-index="4"><span>05</span><h3>Glaseado</h3><p>Acabado y fluorescencia.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="chapter workflow-chapter" id="workflow" data-chapter="Flujos de trabajo" data-theme="light" tabindex="-1">
-      <div class="workflow-header safe-frame"><p class="chapter-kicker">07 · BASIC / CREATIVE</p><h2>Un sistema.<br><em>Dos niveles de libertad.</em></h2><p>Flujos fáciles de aprender, con espacio para un resultado predecible o una caracterización más libre.</p></div>
-      <div class="workflow-console safe-frame">
-        <div class="workflow-tabs" role="tablist" aria-label="Seleccionar flujo de trabajo"><button class="is-active" type="button" role="tab" data-workflow="basic" aria-selected="true"><span>01</span>BASIC</button><button type="button" role="tab" data-workflow="posterior" aria-selected="false"><span>02</span>CREATIVE · Posterior</button><button type="button" role="tab" data-workflow="anterior" aria-selected="false"><span>03</span>CREATIVE · Anterior</button></div>
-        <div class="workflow-panel"><div class="workflow-image-wrap"><img id="workflowImage" src="assets/images/workflow-basic-posterior.webp" alt="Flujo BASIC para restauración posterior" width="1213" height="523" loading="lazy"></div><div class="workflow-description"><span id="workflowLabel">BASIC</span><h3 id="workflowTitle">Una ruta clara hacia el resultado.</h3><p id="workflowText">Situación inicial, distribución de materiales y resultado final en una secuencia fácil de leer.</p><button class="mini-action" id="workflowToggle" type="button">Ver anterior <span>↔</span></button></div></div>
-      </div>
-      <div class="workflow-band" aria-hidden="true"><img src="assets/images/material-spectrum.webp" alt=""></div>
-    </section>
-
-    <section class="chapter details-chapter" id="details" data-chapter="Detalles técnicos" data-theme="dark" tabindex="-1">
-      <div class="details-heading safe-frame"><p class="chapter-kicker">08 · Datos y compatibilidad</p><h2>Precisión que<br><em>se puede medir.</em></h2></div>
-      <div class="spec-strip safe-frame"><article><span>≈</span><strong>100</strong><small>MPa · Resistencia a la flexión en 3 puntos</small></article><article><span>≈</span><strong>10</strong><small>µg/cm² · Solubilidad en ácidos</small></article><article><span>≈</span><strong>8,7</strong><small>10<sup>−6</sup> K<sup>−1</sup> · CET (25–400 °C)</small></article></div>
-      <div class="compatibility-layout safe-frame"><div class="compatibility-visual"><img src="assets/images/compatibility.webp" alt="Materiales de armazón compatibles con VITA LUMEX UNIQUE" width="907" height="575" loading="lazy"></div><div class="compatibility-copy"><span class="micro-label">INDICACIONES</span><h3>Cuatro familias de soporte.</h3><ul><li><span>01</span>Dióxido de zirconio</li><li><span>02</span>Disilicato de litio</li><li><span>03</span>Titanio · Grado 1–5</li><li><span>04</span>Cerámica de feldespato</li></ul><div class="detail-actions"><button class="text-button" type="button" data-dialog="compositionDialog">Composición química <span>↗</span></button><button class="text-button" type="button" data-dialog="kitDialog">Ver kits del sistema <span>↗</span></button></div></div></div>
-    </section>
-
-    <section class="chapter result-chapter" id="result" data-chapter="Resultado" data-theme="dark" tabindex="-1">
-      <div class="result-intro safe-frame"><p class="chapter-kicker">09 · Aplicación y resultado</p><h2>Antes. Técnica.<br><em>Resultado.</em></h2><p>Desliza para comparar la situación inicial con la lectura final de la restauración.</p></div>
-      <div class="comparison-wrap safe-frame"><div class="comparison" id="comparison"><img class="comparison-before" src="assets/images/tooth-opaque.webp" alt="Restauración antes de la caracterización" width="1033" height="991" loading="lazy"><div class="comparison-after" id="comparisonAfter"><img src="assets/images/tooth-natural.webp" alt="Resultado final caracterizado" width="895" height="946" loading="lazy"></div><div class="comparison-line" id="comparisonLine"><span>↔</span></div><span class="comparison-label before-label">ANTES</span><span class="comparison-label after-label">RESULTADO</span></div><input class="comparison-range" id="comparisonRange" type="range" min="0" max="100" value="52" aria-label="Comparar antes y resultado"></div>
-      <div class="fired-toggle safe-frame"><div><p class="chapter-kicker">Control y precisión</p><h3>El color ya es visible durante la estratificación.</h3><p>Un resultado de cocción controlable para un trabajo predecible.</p></div><button class="state-card" id="stateCard" type="button" aria-label="Alternar entre estado húmedo y después de la cocción"><img id="stateImage" src="assets/images/wet-state.webp" alt="Restauración en estado húmedo" width="359" height="359" loading="lazy"><span id="stateLabel">En estado húmedo</span><i>Alternar ↗</i></button></div>
-      <footer class="closing-scene"><img src="assets/images/application-bridge.webp" alt="Aplicación precisa de VITA LUMEX UNIQUE sobre una restauración" width="2200" height="1468" loading="lazy"><div class="closing-shade"></div><div class="closing-content safe-frame"><span class="chapter-kicker">VITA LUMEX<sup>®</sup> UNIQUE</span><h2>perfect match.</h2><p>Norman Díaz · Curso teórico-práctico · 24 OCT 2026</p><button class="restart-button" id="restartButton" type="button">Volver al inicio <span>↑</span></button></div></footer>
-    </section>
-  </main>
-
-  <dialog class="modal" id="helpDialog"><button class="modal-close" type="button" data-close aria-label="Cerrar">×</button><span class="chapter-kicker">Control del presentador</span><h2>Navegación rápida</h2><div class="key-grid"><kbd>↓</kbd><span>Avanzar capítulo</span><kbd>↑</kbd><span>Retroceder capítulo</span><kbd>→</kbd><span>Avanzar capítulo</span><kbd>←</kbd><span>Retroceder capítulo</span><kbd>Home</kbd><span>Ir al inicio</span><kbd>End</kbd><span>Ir al resultado</span><kbd>F</kbd><span>Pantalla completa</span><kbd>Esc</kbd><span>Cerrar panel</span></div><p class="modal-note">Los controles no interfieren cuando el foco está en un botón, enlace o deslizador.</p></dialog>
-  <dialog class="modal visual-modal" id="wavelengthDialog"><button class="modal-close" type="button" data-close aria-label="Cerrar">×</button><span class="chapter-kicker">365 nm + 395 nm</span><h2>Dos lecturas de la fluorescencia.</h2><img src="assets/images/wavelengths.webp" alt="Diagrama de influencia de 365 y 395 nanómetros en la percepción de la fluorescencia" width="1003" height="691" loading="lazy"><div class="modal-columns"><p><strong>365 nm</strong>Fuerte excitación: permite leer intensidad y efectos.</p><p><strong>395 nm</strong>Más cerca de la luz visible: ofrece una percepción más realista.</p></div></dialog>
-  <dialog class="modal" id="compositionDialog"><button class="modal-close" type="button" data-close aria-label="Cerrar">×</button><span class="chapter-kicker">Datos y propiedades</span><h2>Composición química.</h2><div class="composition-list"><div><span>SiO₂</span><strong>58–66 %</strong></div><div><span>Al₂O₃</span><strong>7–11 %</strong></div><div><span>K₂O</span><strong>6–9 %</strong></div><div><span>B₂O₃</span><strong>5–9 %</strong></div><div><span>Na₂O</span><strong>5–9 %</strong></div><div><span>CaO</span><strong>1–5 %</strong></div><div><span>ZrO₂</span><strong>&lt; 5 %</strong></div><div><span>Otros componentes</span><strong>&lt; 10 %</strong></div></div></dialog>
-  <dialog class="modal visual-modal" id="kitDialog"><button class="modal-close" type="button" data-close aria-label="Cerrar">×</button><span class="chapter-kicker">Sistema y componentes</span><h2>Dos configuraciones.</h2><div class="kit-grid"><figure><img src="assets/images/kit-classic.webp" alt="Kit estándar VITA classical A1-D4" width="979" height="708" loading="lazy"><figcaption>VITA classical A1–D4<sup>®</sup></figcaption></figure><figure><img src="assets/images/kit-3d.webp" alt="Kit estándar VITA 3D-MASTER" width="988" height="687" loading="lazy"><figcaption>VITA 3D-MASTER<sup>®</sup></figcaption></figure></div></dialog>
-</body>
-</html>
+<header class="header"><a href="#opening" class="wordmark">VITA LUMEX<small>UNIQUE / GINGIVA</small></a><div class="controls"><span class="counter" id="chapterCount">01 / 09</span><button class="icon-btn" id="previous" aria-label="Capítulo anterior">↑</button><button class="icon-btn" id="next" aria-label="Capítulo siguiente">↓</button><button class="icon-btn" id="full" aria-label="Pantalla completa">⛶</button></div></header>
+<div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
+<nav class="nav" aria-label="Capítulos"><a href="#opening" aria-label="Apertura"></a><a href="#challenge" aria-label="Desafío"></a><a href="#product" aria-label="Producto"></a><a href="#colors" aria-label="Colores"></a><a href="#texture" aria-label="Textura"></a><a href="#basic" aria-label="BASIC Gingiva"></a><a href="#creative" aria-label="CREATIVE Gingiva"></a><a href="#application" aria-label="Aplicación"></a><a href="#closing" aria-label="Cierre"></a></nav>
+<main>
+<section class="chapter hero" id="opening" data-title="Apertura"><div class="hero-art" aria-hidden="true"></div><p class="kicker reveal">VITA LUMEX® UNIQUE · Estética rosa</p><h1 class="reveal">La estética no termina <em>en el diente.</em></h1><p class="lede reveal">GINGIVA · Caracterización tridimensional de la encía mediante cerámica líquida.</p><p class="byline reveal">Norman Díaz · Curso teórico-práctico · 24 octubre 2026</p><span class="scrollcue">Desliza para explorar ↓</span></section>
+<section class="chapter" id="challenge" data-title="El desafío"><p class="kicker reveal">02 · El desafío</p><h2 class="reveal">La naturalidad también tiene <em>color rosa.</em></h2><p class="lede reveal">Una restauración puede reproducir el diente con precisión y aun así perder naturalidad si la encía luce plana, uniforme o sin textura.</p><div class="grid"><article class="tile reveal"><span class="num">01 / TONO</span><h3>Matices</h3><p>La encía combina zonas claras y oscuras, no un único rosa.</p></article><article class="tile reveal"><span class="num">02 / PROFUNDIDAD</span><h3>Volumen</h3><p>La anatomía gingival presenta transiciones y relieves.</p></article><article class="tile reveal"><span class="num">03 / SUPERFICIE</span><h3>Textura</h3><p>El acabado superficial completa la percepción de tejido.</p></article></div></section>
+<section class="chapter light" id="product" data-title="El sistema"><div class="split"><div><p class="kicker reveal">03 · El producto</p><h2 class="reveal">Un sistema. <em>Encía con carácter.</em></h2><p class="lede reveal">VITA LUMEX UNIQUE combina pastas listas para usar para caracterización 3D y microrecubrimientos. En estética rosa, EFFECT GINGIVA aporta matices y TEXTURE GINGIVA permite recrear detalles de tejidos blandos.</p><span class="tag">CERÁMICA LÍQUIDA · GINGIVA</span></div><div class="glass reveal"><div class="pink-stage" role="img" aria-label="Representación artística conceptual de diente y encía"></div><p class="footnote">Visual conceptual, no fotografía clínica ni representación de un resultado específico.</p></div></div></section>
+<section class="chapter light" id="colors" data-title="EFFECT GINGIVA"><p class="kicker reveal">04 · EFFECT GINGIVA</p><h2 class="reveal">No existe <em>un solo rosa.</em></h2><p class="lede reveal">Explora los matices citados en el flujo BASIC GINGIVA del fabricante. Los círculos son ilustraciones cromáticas orientativas, no una guía de color calibrada.</p><div class="swatches reveal" role="group" aria-label="Matices gingivales"><button class="swatch active" data-color="deep" aria-label="deep-pink" aria-pressed="true"></button><button class="swatch" data-color="rose" aria-label="light-rose" aria-pressed="false"></button><button class="swatch" data-color="pale" aria-label="pale-papilla" aria-pressed="false"></button><button class="swatch" data-color="red" aria-label="deep-red translúcido" aria-pressed="false"></button></div><div class="shade-preview reveal" id="shadePreview" style="--selected:#933e5c"><strong id="shadeName">EFFECT GINGIVA · deep-pink</strong><p id="shadeUse">Color de base y zonas de mayor intensidad.</p></div></section>
+<section class="chapter" id="texture" data-title="TEXTURE GINGIVA"><p class="kicker reveal">05 · TEXTURE GINGIVA</p><h2 class="reveal">La diferencia está <em>en la superficie.</em></h2><div class="split"><div><p class="lede reveal">TEXTURE GINGIVA es un material no fluorescente diseñado para conseguir efectos de color y textura compatibles con la apariencia de los tejidos blandos.</p><p class="reveal">Mediante microrecubrimientos es posible personalizar el relieve y enriquecer visualmente la profundidad de la caracterización gingival.</p></div><div class="glass reveal"><h3>Color + anatomía + textura</h3><p>La estética gingival se construye por decisiones sucesivas; no depende únicamente del color de la pasta.</p><div class="tag">TEXTURE GINGIVA · NO FLUORESCENTE</div></div></div></section>
+<section class="chapter" id="basic" data-title="BASIC GINGIVA"><p class="kicker reveal">06 · Protocolo del fabricante</p><h2 class="reveal">BASIC GINGIVA. <em>Una secuencia clara.</em></h2><p class="lede reveal">Selecciona cada fase para seguir la lógica general del flujo de caracterización gingival publicado por VITA.</p><div class="steps reveal"><button class="step active" data-step="0"><b>01</b><strong>Preparación</strong></button><button class="step" data-step="1"><b>02</b><strong>deep-pink</strong></button><button class="step" data-step="2"><b>03</b><strong>light-rose</strong></button><button class="step" data-step="3"><b>04</b><strong>pale-papilla</strong></button><button class="step" data-step="4"><b>05</b><strong>Vasos y acabado</strong></button></div><div class="step-summary reveal"><h3 id="stepTitle">Preparar la superficie</h3><p id="stepDesc">La situación inicial puede recibir la pasta directamente o una capa de glaseado muy fina, según el procedimiento documentado.</p></div><p class="footnote">Resumen didáctico: consulte el manual del fabricante para preparación, cocción y compatibilidades.</p></section>
+<section class="chapter light" id="creative" data-title="CREATIVE GINGIVA"><p class="kicker reveal">07 · Personalización</p><h2 class="reveal">CREATIVE GINGIVA. <em>Más libertad.</em></h2><p class="lede reveal">Dos enfoques de microrecubrimiento ultrafino para personalizar profundidad, color y estructura.</p><div class="tabs reveal" role="tablist" aria-label="Modalidad Creative Gingiva"><button class="tab active" data-mode="after" role="tab" aria-selected="true">Después de BASIC</button><button class="tab" data-mode="start" role="tab" aria-selected="false">Como punto de partida</button></div><div class="glass reveal" aria-live="polite"><h3 id="creativeTitle">Profundidad adicional</h3><p id="creativeDesc">Aplicar TEXTURE PASTE después de BASIC GINGIVA para introducir un efecto de profundidad extra.</p></div></section>
+<section class="chapter" id="application" data-title="Aplicación"><p class="kicker reveal">08 · Demostración de la técnica</p><h2 class="reveal">De una base plana a una <em>lectura natural.</em></h2><p class="lede reveal">Mueve el control para visualizar una comparación conceptual entre una superficie monocromática y una caracterización con más matices. No representa un caso clínico real.</p><div class="compare reveal"><div class="compare-before">BASE UNIFORME</div><div class="compare-after" id="compareAfter">MATICES Y PROFUNDIDAD</div><input type="range" min="0" max="100" value="52" id="compareRange" aria-label="Comparación visual conceptual"></div><p class="footnote">Para la demostración práctica, incorpore imágenes propias de la pieza antes, durante y después de la aplicación.</p></section>
+<section class="chapter" id="closing" data-title="Cierre"><p class="kicker reveal">09 · El resultado</p><h2 class="reveal">No es solo rosa. <em>Es naturalidad.</em></h2><p class="lede reveal">Con EFFECT GINGIVA y TEXTURE GINGIVA, VITA LUMEX UNIQUE aporta herramientas para individualizar la estética rosa con color, profundidad y textura.</p><div class="grid"><div class="tile reveal"><span class="num">BASIC</span><h3>Caracterizar</h3><p>Una secuencia sistemática para iniciar.</p></div><div class="tile reveal"><span class="num">CREATIVE</span><h3>Individualizar</h3><p>Libertad para definir los detalles.</p></div><div class="tile reveal"><span class="num">ACABADO</span><h3>Naturalizar</h3><p>Usar glaseado no fluorescente para la estética gingival.</p></div></div><p class="byline">Norman Díaz · 24 OCT 2026</p><p class="footnote">Fuentes técnicas: <a class="source-link" href="https://hs.vita-zahnfabrik.com/hubfs/VITA%20LUMEX%20UNIQE/Brosch%C3%BCre/10874SP_LUMEX_UNIQUE_Brosch%C3%BCre_ES_V01.pdf?hsLang=es" target="_blank" rel="noopener noreferrer">folleto VITA LUMEX UNIQUE (ES)</a> · <a class="source-link" href="https://hs.vita-zahnfabrik.com/en/vita-lumex-unique" target="_blank" rel="noopener noreferrer">página oficial y tutoriales</a>.</p></section>
+</main>
+<script>
+(()=>{'use strict';const $=(s)=>document.querySelector(s), $$=(s)=>[...document.querySelectorAll(s)],chapters=$$('.chapter'),nav=$$('.nav a');let active=0;
+function setActive(i){active=Math.max(0,Math.min(chapters.length-1,i));$('#chapterCount').textContent=String(active+1).padStart(2,'0')+' / 09';nav.forEach((a,n)=>a.classList.toggle('active',n===active));}
+function goto(i){chapters[Math.max(0,Math.min(chapters.length-1,i))].scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});}
+$('#previous').addEventListener('click',()=>goto(active-1));$('#next').addEventListener('click',()=>goto(active+1));$('#full').addEventListener('click',()=>{if(document.fullscreenElement)document.exitFullscreen?.();else document.documentElement.requestFullscreen?.().catch(()=>{});});
+nav.forEach((a,i)=>a.addEventListener('click',e=>{e.preventDefault();goto(i);}));
+document.addEventListener('keydown',e=>{if(['BUTTON','INPUT','A','TEXTAREA','SELECT'].includes(document.activeElement.tagName)||e.altKey||e.metaKey||e.ctrlKey)return;if(['ArrowDown','ArrowRight','PageDown'].includes(e.key)){e.preventDefault();goto(active+1)}if(['ArrowUp','ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();goto(active-1)}if(e.key==='Home'){e.preventDefault();goto(0)}if(e.key==='End'){e.preventDefault();goto(chapters.length-1)}if(e.key.toLowerCase()==='f')$('#full').click()});
+const observer=new IntersectionObserver(entries=>entries.forEach(x=>{if(x.isIntersecting){setActive(chapters.indexOf(x.target))}}),{rootMargin:'-38% 0px -38% 0px'});chapters.forEach(x=>observer.observe(x));
+const revealObserver=new IntersectionObserver(entries=>entries.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');revealObserver.unobserve(x.target)}}),{threshold:.12});$$('.reveal').forEach(x=>revealObserver.observe(x));
+let ticking=false;window.addEventListener('scroll',()=>{if(ticking)return;ticking=true;requestAnimationFrame(()=>{$('#progressBar').style.width=(100*scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight))+'%';ticking=false})},{passive:true});
+const shades={deep:['EFFECT GINGIVA · deep-pink','Color de base y zonas de mayor intensidad.','#933e5c'],rose:['EFFECT GINGIVA · light-rose','Matices más claros y transiciones sobre la base.','#d68ca5'],pale:['EFFECT GINGIVA · pale-papilla','Caracterización de zonas papilares o alveolares.','#eab9bd'],red:['TRANSLUCENT EFFECT · deep-red','Efectos finos de vasos en húmedo sobre húmedo.','#872a40']};
+$$('.swatch').forEach(b=>b.addEventListener('click',()=>{let x=shades[b.dataset.color];$('#shadeName').textContent=x[0];$('#shadeUse').textContent=x[1];$('#shadePreview').style.setProperty('--selected',x[2]);$$('.swatch').forEach(i=>{i.classList.toggle('active',i===b);i.setAttribute('aria-pressed',String(i===b))})}));
+const steps=[['Preparar la superficie','La situación inicial puede recibir la pasta directamente o una capa de glaseado muy fina, según el procedimiento documentado.'],['Aplicar deep-pink','Crear el primer mapa cromático con EFFECT PASTE GINGIVA deep-pink.'],['Añadir light-rose','Aplicar EFFECT PASTE GINGIVA light-rose, conservando parte del área alveolar sin cubrir.'],['Caracterizar papilas','Utilizar EFFECT PASTE GINGIVA pale-papilla para caracterizar las crestas alveolares.'],['Efectos de vasos y acabado','Aplicar TRANSLUCENT EFFECT PASTE deep-red sobre los colores húmedos para sugerir vasos finos; finalizar según las indicaciones oficiales de cocción y glaseado.']];
+$$('.step').forEach(b=>b.addEventListener('click',()=>{let x=steps[Number(b.dataset.step)];$('#stepTitle').textContent=x[0];$('#stepDesc').textContent=x[1];$$('.step').forEach(i=>i.classList.toggle('active',i===b))}));
+const modes={after:['Profundidad adicional','Aplicar TEXTURE PASTE después de BASIC GINGIVA para introducir un efecto de profundidad extra.'],start:['Color y estructura desde el inicio','Utilizar TEXTURE PASTE como punto de partida para una combinación rápida e individualizada de color y estructura.']};
+$$('.tab').forEach(b=>b.addEventListener('click',()=>{let x=modes[b.dataset.mode];$('#creativeTitle').textContent=x[0];$('#creativeDesc').textContent=x[1];$$('.tab').forEach(i=>{i.classList.toggle('active',i===b);i.setAttribute('aria-selected',String(i===b))})}));
+$('#compareRange').addEventListener('input',e=>$('#compareAfter').style.clipPath='inset(0 '+(100-Number(e.target.value))+'% 0 0)');
+$('#compareAfter').style.clipPath='inset(0 48% 0 0)';
+})();
+</script>
+</body></html>
